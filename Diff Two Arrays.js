@@ -1,17 +1,18 @@
 function diffArray(arr1, arr2) {
   var newArray = [];
-  var arr3 = arr1.concat(arr2);
-  var sorted = arr3.sort(); 
   
-  function compare() {
-    for (var i = 0; i < sorted.length; i++) {
-      for (var j = 0; j < sorted.length; j++) {
-        sorted[i] !== sorted[j];
-        newArray.push(sorted[j]);
+  
+    for (var i = 0; i < arr1.length; i++) {
+      if (arr2.indexOf(arr1[i]) === -1) {
+        newArray.push(arr1[i]);
       }
     }
-  }
   
+   for (var j = 0; j < arr2.length; j++) {
+       if (arr1.indexOf(arr2[j]) === -1) {
+        newArray.push(arr2[j]);
+      }
+    }
  
    return newArray;
 }
